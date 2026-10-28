@@ -5,7 +5,6 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import {
   FaGithub,
-  FaLinkedin,
   FaFileDownload,
 } from "react-icons/fa";
 import particleConfig from "./particle-config.js";
@@ -28,11 +27,6 @@ const heroData = {
   },
   socialLinks: [
     { id: "github", icon: FaGithub, url: "https://github.com/Hammadmunawer" },
-    {
-      id: "linkedin",
-      icon: FaLinkedin,
-      url: "https://www.linkedin.com/in/hammad-munawer",
-    },
   ],
 };
 

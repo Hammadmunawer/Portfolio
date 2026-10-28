@@ -5,7 +5,6 @@ import {
   FaMapMarkerAlt,
   FaPhone,
   FaEnvelope,
-  FaLinkedin,
   FaGithub,
   FaTwitter,
 } from "react-icons/fa";
@@ -202,15 +201,6 @@ const Contact = () => {
                   Follow Me
                 </h3>
                 <div className="flex justify-center lg:justify-start space-x-6">
-                  <motion.a
-                    href="www.linkedin.com/in/hammad-munawer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ y: -5 }}
-                    className="p-3 rounded-full bg-gray-800 text-white dark:bg-gray-700 hover:bg-cyan-500 transition-colors"
-                  >
-                    <FaLinkedin className="text-xl" />
-                  </motion.a>
                   <motion.a
                     href="https://github.com/Hammadmunawer"
                     target="_blank"
