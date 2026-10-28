@@ -24,7 +24,7 @@ const heroData = {
     "I'm an AI Engineer specializing in AI website development, AI mobile app development, and custom AI SaaS solutions. I help startups, entrepreneurs, and businesses build intelligent, scalable, and user-friendly applications that solve real-world problems and drive business growth.",
   cta: {
     contact: "#contact",
-    cv: "/assets/Hammad.pdf",
+    cv: "/Hammad.pdf",
   },
   socialLinks: [
     { id: "github", icon: FaGithub, url: "https://github.com/Hammadmunawer" },
