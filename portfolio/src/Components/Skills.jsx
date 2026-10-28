@@ -3,32 +3,40 @@ import { motion } from "framer-motion";
 
 const aboutData = {
   skills: [
-    // AI & Core
-    "OpenAI API",
-    "AI Integration",
-    "Custom Chatbots",
-    "Virtual Assistants",
-    "Prompt Engineering",
-    // Web & Mobile
-    "React",
+    // Frontend
+    "React.js",
+    "Vue.js",
     "Next.js",
+    "Redux Toolkit",
+    // Backend
     "Node.js",
-    "Express.js",
-    "React Native",
-    // Backend & DB
-    "Python",
-    "FastAPI",
-    "Django",
-    "SQL / MySQL",
+    "Laravel",
+    "Flask",
+    "PHP",
+    // Databases
+    "MySQL",
     "MongoDB",
+    "PostgreSQL",
     "Firebase",
-    // SaaS & Tools
-    "REST APIs",
-    "JWT Authentication",
+    // Languages
+    "JavaScript",
+    "Python",
+    "C++",
+    "SQL",
+    // DevOps / Tools
     "Git / GitHub",
+    "Postman",
+    "Linux",
     "Docker",
-    "Stripe Integration",
-    "Webflow",
+    // Core / Architecture
+    "REST API",
+    "MERN Stack",
+    "Multi-tenant Architecture",
+    "RBAC",
+    "OAuth 2.0",
+    "OpenAI API Integration",
+    "Scalable Architecture",
+    "Agile / SDLC",
   ],
   education: [
     {
@@ -172,13 +180,13 @@ const Skills = () => {
               Technical Skills
             </h3>
 
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-wrap gap-3 justify-center">
               {aboutData.skills.map((skill, index) => (
                 <motion.div
                   key={index}
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  transition={{ duration: 0.4, delay: index * 0.04 }}
                   className="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-gray-900 font-medium text-sm hover:scale-110 transition-transform cursor-pointer shadow-lg"
                 >
                   {skill}
