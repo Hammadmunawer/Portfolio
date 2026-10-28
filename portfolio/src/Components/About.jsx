@@ -46,7 +46,7 @@ const About = () => {
               <img
                 src={photo}
                 alt="Profile"
-                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                className="object-cover object-top w-full h-full transition-transform duration-500 group-hover:scale-110"
               />
               {/* Glow overlay */}
               <div className="absolute inset-0 bg-cyan-400/10 group-hover:bg-cyan-400/20 transition"></div>
