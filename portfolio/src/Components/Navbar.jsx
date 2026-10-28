@@ -21,12 +21,17 @@ const Navbar = () => {
     []
   );
 
-  // ✅ Intersection Observer for Active Section
+  // ✅ Intersection Observer for Active Section & URL hash update
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+            if (window.location.hash !== `#${entry.target.id}`) {
+              window.history.replaceState(null, "", `#${entry.target.id}`);
+            }
+          }
         });
       },
       { threshold: 0.3 }
@@ -36,6 +41,9 @@ const Navbar = () => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
+
+    const contactEl = document.getElementById("contact");
+    if (contactEl) observer.observe(contactEl);
 
     return () => observer.disconnect();
   }, [navItems]);
@@ -47,17 +55,36 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Smooth Scroll
+  // ✅ Smooth Scroll and URL update
   const scrollToSection = useCallback((id) => {
+    if (id === "hero") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.history.replaceState(null, "", window.location.pathname);
+      setActiveSection("");
+      setIsOpen(false);
+      return;
+    }
+
     const el = document.getElementById(id);
     if (el) {
       const offset = 80;
       const top = el.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: "smooth" });
+      window.history.replaceState(null, "", `#${id}`);
       setActiveSection(id);
       setIsOpen(false);
     }
   }, []);
+
+  // ✅ Handle direct hash on initial load (if someone lands on specific hash)
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash) {
+      setTimeout(() => {
+        scrollToSection(hash);
+      }, 400);
+    }
+  }, [scrollToSection]);
 
   // ✅ Disable body scroll when mobile menu open
   useEffect(() => {
@@ -74,10 +101,11 @@ const Navbar = () => {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-300 ${scrolled
+      className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-300 ${
+        scrolled
           ? "bg-gray-900/90 py-2 shadow backdrop-blur border-b border-cyan-500/20"
           : "bg-transparent py-3"
-        }`}
+      }`}
       role="navigation"
       aria-label="Main Navigation"
     >
@@ -114,10 +142,11 @@ const Navbar = () => {
             <motion.button
               key={id}
               onClick={() => scrollToSection(id)}
-              className={`cursor-pointer relative px-3 py-1.5 text-xs font-medium flex items-center gap-2 transition-colors ${activeSection === id
+              className={`cursor-pointer relative px-3 py-1.5 text-xs font-medium flex items-center gap-2 transition-colors ${
+                activeSection === id
                   ? "text-cyan-400"
                   : "text-slate-300 hover:text-cyan-300"
-                }`}
+              }`}
               whileHover={{ y: -1 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -138,13 +167,16 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-3">
           <motion.button
             onClick={() => scrollToSection("contact")}
-            className="cursor-pointer px-4 py-2 text-xs font-medium text-cyan-300 border border-cyan-500/40 rounded-lg hover:bg-cyan-500/10 transition"
+            className={`cursor-pointer px-4 py-2 text-xs font-medium rounded-lg transition ${
+              activeSection === "contact"
+                ? "bg-cyan-500 text-white shadow-lg"
+                : "text-cyan-300 border border-cyan-500/40 hover:bg-cyan-500/10"
+            }`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Contact
           </motion.button>
-
         </div>
 
         {/* ✅ Mobile Controls */}
@@ -186,10 +218,11 @@ const Navbar = () => {
                 <motion.button
                   key={id}
                   onClick={() => scrollToSection(id)}
-                  className={`cursor-pointer w-full py-3 px-4 rounded-lg flex items-center gap-3 text-sm ${activeSection === id
+                  className={`cursor-pointer w-full py-3 px-4 rounded-lg flex items-center gap-3 text-sm ${
+                    activeSection === id
                       ? "bg-cyan-500/10 text-cyan-300 shadow"
                       : "text-slate-300 hover:bg-gray-800/40"
-                    }`}
+                  }`}
                   whileHover={{ x: 8 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -199,7 +232,11 @@ const Navbar = () => {
 
               <motion.button
                 onClick={() => scrollToSection("contact")}
-                className="cursor-pointer w-full py-3 px-4 text-center rounded-lg text-cyan-300 border border-cyan-500/40 hover:bg-cyan-500/10 transition"
+                className={`cursor-pointer w-full py-3 px-4 text-center rounded-lg text-sm font-medium transition ${
+                  activeSection === "contact"
+                    ? "bg-cyan-500 text-white"
+                    : "text-cyan-300 border border-cyan-500/40 hover:bg-cyan-500/10"
+                }`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
