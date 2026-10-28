@@ -1,60 +1,66 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      name: "Trounce ",
+      name: "Trounce — AI Social Media SaaS",
       description:
-        "A SaaS-based platform integrating multiple social media accounts (Facebook, Instagram, Twitter, LinkedIn) into a single dashboard. Built with Node.js backend, MongoDB databases, implementing JWT authentication, role-based access control, and MVC architecture for maintainable, scalable, and secure operations.",
-      technologies: [   "Node.js",
-    "Express.js",
-     "node.js",
-    "MongoDB",
-    "REST APIs",
-    "JWT Authentication",
-    "MVC Architecture",
-  ],
+        "An AI-powered SaaS platform integrating multiple social media accounts (Facebook, Instagram, Twitter, LinkedIn) into a single dashboard. Features intelligent analytics, AI-driven content suggestions, JWT authentication, role-based access control, and a scalable Node.js + MongoDB backend.",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "OpenAI API",
+        "JWT Authentication",
+        "REST APIs",
+      ],
       githubLink: "https://github.com/akhtarabbas-909/TrounceAPI",
       image: "/img/saas.jpg",
     },
     {
       id: 2,
-      name: "Authentication App",
+      name: "HRMS — HR Management System",
       description:
-        "A secure authentication system built with Node.js and SQL database. Implements user signup, login, and JWT-based authentication using repository pattern and layered architecture for maintainable and scalable backend design.",
-      technologies: [ "Node.js",
-    "Express.js",
-    "SQL",
-    "JWT Authentication",
-    "Repository Pattern",
-    "Layered Architecture"],
-      githubLink: "https://github.com/akhtarabbas-909/AuthenticationApp",
-      image: "/img/authentication.jpg",
+        "A full-featured Human Resource Management System built with .NET Core backend and React frontend. Manages employee records, attendance tracking, payroll processing, leave management, and role-based access for HR admins and employees.",
+      technologies: [
+        "React",
+        "ASP.NET Core",
+        "C#",
+        "SQL Server",
+        "Entity Framework",
+        "JWT Authentication",
+        "REST APIs",
+      ],
+      githubLink: "#",
+      image: "/img/internal.jpg",
     },
     {
       id: 3,
-      name: "Internal Management System",
+      name: "AI Authentication App",
       description:
-        "An employee management system built with Node.js and SQL database, following MVC architecture. Features include attendance tracking, task assignment, and role-based access control, designed using clean layered backend principles for scalability and maintainability.",
-      technologies: [    "Node.js",
-    "Express.js",
-    "SQL",
-    "MVC Architecture",
-    "Role-Based Access Control",
-    ],
-      githubLink: "https://github.com/Moughees110/Internal-Management-System",
-      image: "/img/internal.jpg",
+        "A secure, production-ready authentication system with AI-assisted onboarding. Built with Node.js and SQL database implementing user signup, login, JWT-based authentication, repository pattern, and layered architecture for maintainable backend design.",
+      technologies: [
+        "Node.js",
+        "Express.js",
+        "SQL",
+        "JWT Authentication",
+        "Repository Pattern",
+        "Layered Architecture",
+      ],
+      githubLink: "https://github.com/akhtarabbas-909/AuthenticationApp",
+      image: "/img/authentication.jpg",
     },
- 
   ];
 
   return (
     <section
       id="projects"
-      className="relative min-h-screen py-20 px-4 
-                 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 
+      className="relative min-h-screen py-20 px-4
+                 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950
                  text-white scroll-mt-28"
     >
       <div className="max-w-7xl mx-auto">
@@ -76,7 +82,7 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Some of my recent works showcasing my skills and experience
+          Real-world AI solutions I've built for startups and businesses
         </motion.p>
 
         {/* Projects Grid */}
@@ -128,7 +134,7 @@ const Projects = () => {
                     Live <FaExternalLinkAlt />
                   </a>
                 )}
-                {project.githubLink && (
+                {project.githubLink && project.githubLink !== "#" && (
                   <a
                     href={project.githubLink}
                     target="_blank"

@@ -6,30 +6,33 @@ import { loadFull } from "tsparticles";
 import {
   FaGithub,
   FaLinkedin,
-  FaTwitter,
   FaFileDownload,
 } from "react-icons/fa";
-import particleConfig from "./particle-config.js"; // ✅ Particle config file
+import particleConfig from "./particle-config.js";
 
 // ✅ Centralized Hero Data
 const heroData = {
   name: "Hammad Ali",
   roles: [
-    "Backend Developer",
-    "Node.js Specialist",
-    "REST API Developer",
-    "Database & Architecture Enthusiast",
+    "AI Engineer",
+    "AI Website Developer",
+    "AI Mobile App Developer",
+    "Custom AI SaaS Builder",
+    "Intelligent Automation Expert",
   ],
   description:
-   "I build secure, scalable, and maintainable backend systems using Node.js, SQL & NoSQL databases, and modern architecture patterns like MVC, layered architecture, and repository pattern. I turn complex backend problems into efficient solutions, powering SaaS platforms, authentication systems, and internal management tools.",
+    "I'm an AI Engineer specializing in AI website development, AI mobile app development, and custom AI SaaS solutions. I help startups, entrepreneurs, and businesses build intelligent, scalable, and user-friendly applications that solve real-world problems and drive business growth.",
   cta: {
     contact: "#contact",
-    cv: "/assets/Hammad.pdf", // put actual CV path
+    cv: "/assets/Hammad.pdf",
   },
   socialLinks: [
     { id: "github", icon: FaGithub, url: "https://github.com/Hammadmunawer" },
-    { id: "linkedin", icon: FaLinkedin, url: "www.linkedin.com/in/hammad-munawer" },
-  
+    {
+      id: "linkedin",
+      icon: FaLinkedin,
+      url: "https://www.linkedin.com/in/hammad-munawer",
+    },
   ],
 };
 
@@ -94,7 +97,7 @@ const HeroSection = () => {
           className="text-lg md:text-2xl lg:text-3xl font-semibold text-slate-300 mb-6"
           aria-label="Dynamic roles"
         >
-          I am a{" "}
+          I am an{" "}
           <TypeAnimation
             sequence={heroData.roles.flatMap((role) => [role, 2000])}
             wrapper="span"

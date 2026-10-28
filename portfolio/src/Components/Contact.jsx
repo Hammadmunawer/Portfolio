@@ -126,9 +126,7 @@ const Contact = () => {
               Get In Touch
             </h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg">
-              Have a project in mind or just want to say hello? Feel free to
-              reach out. I'm always open to discussing new projects and
-              opportunities.
+              Have an AI project in mind or want to build a custom AI solution? Feel free to reach out. I'm always open to discussing AI projects, SaaS ideas, and business opportunities.
             </p>
           </motion.div>
 
@@ -171,10 +169,10 @@ const Contact = () => {
                   </h3>
                 </div>
                 <a
-                  href="mailto:hammad@example.com"
+                  href="mailto:hammadmunawer2004@gmail.com"
                   className="text-cyan-400 hover:text-cyan-300 transition-colors text-center lg:text-left"
                 >
-                  hammad.ali@huboweb.com
+                  hammadmunawer2004@gmail.com
                 </a>
               </motion.div>
 
@@ -402,7 +400,7 @@ const Contact = () => {
       {/* ✅ Copyright Footer */}
       <footer className="bg-gray-100 dark:bg-gray-950 py-6 text-center border-t border-gray-200 dark:border-gray-800">
         <p className="text-gray-600 dark:text-gray-400 text-sm">
-          © {new Date().getFullYear()} Muzammil Bhatti. All rights reserved.
+          © {new Date().getFullYear()} Hammad Ali. All rights reserved.
         </p>
       </footer>
     </>

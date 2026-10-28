@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaUser, FaCode, FaLaptopCode } from "react-icons/fa";
-import photo from "/img/proile 2.jpeg"
+import photo from "/img/proile 2.jpeg";
+
 const About = () => {
   return (
     <section
@@ -27,7 +28,7 @@ const About = () => {
             About Me
           </h2>
           <p className="mt-3 text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
-            Get to know who I am, what I do, and my journey in tech.
+            Get to know who I am, what I do, and my journey in AI & tech.
           </p>
         </motion.div>
 
@@ -43,7 +44,7 @@ const About = () => {
           >
             <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden border-2 border-cyan-400/40 shadow-lg shadow-cyan-500/20 group">
               <img
-                src={photo} // 👉 Apni profile image yahan lagao
+                src={photo}
                 alt="Profile"
                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
               />
@@ -66,13 +67,16 @@ const About = () => {
                 <FaUser className="text-cyan-400" /> Who I Am
               </h3>
               <p className="mt-2 text-gray-300 leading-relaxed">
-                I’m{" "}
-                <span className="text-cyan-400 font-medium">Hammad</span>, a
-    dedicated backend developer passionate about building secure, scalable, and maintainable server-side applications. I specialize in{" "}
+                I'm{" "}
+                <span className="text-cyan-400 font-medium">Hammad</span>, an
+                AI Engineer passionate about building intelligent, scalable, and
+                user-friendly applications. I specialize in{" "}
                 <span className="text-teal-300">
-                 Node.js, RESTful APIs, JWT authentication, MVC and layered architecture
+                  AI website development, AI mobile app development, and custom
+                  AI SaaS solutions
                 </span>
-                , I have worked on SaaS platforms, internal management systems, and automation tools, delivering clean, efficient, and production-ready backend solutions that enhance performance and streamline operations.
+                . I help startups, entrepreneurs, and businesses bring their AI
+                ideas to life — from concept to production-ready products.
               </p>
             </div>
 
@@ -82,11 +86,14 @@ const About = () => {
                 <FaCode className="text-cyan-400" /> What I Do
               </h3>
               <p className="mt-2 text-gray-300 leading-relaxed">
-                I specialize in{" "}
+                I build{" "}
                 <span className="text-cyan-400">
-              Node.js backend development, RESTful APIs, JWT authentication, and MVC & layered architecture
-                </span>
-              I build scalable SaaS applications, internal management systems, and automation tools, optimizing databases with MySQL & MongoDB and delivering secure, maintainable, and high-performance backend solutions for real-world applications.
+                  AI-powered web apps, mobile apps, and SaaS platforms
+                </span>{" "}
+                integrated with cutting-edge AI technologies like OpenAI,
+                custom chatbots, virtual assistants, intelligent automation, and
+                smart workflows. I deliver modern, scalable, and user-friendly
+                digital products tailored to real-world business needs.
               </p>
             </div>
 
@@ -96,9 +103,14 @@ const About = () => {
                 <FaLaptopCode className="text-cyan-400" /> My Vision
               </h3>
               <p className="mt-2 text-gray-300 leading-relaxed">
-               My goal is to build robust and scalable backend systems that power seamless digital experiences. I aim to deliver solutions that are not only secure, efficient, and maintainable, but also support businesses in achieving their goals. I strongly believe in{" "}
-                <span className="text-teal-300">innovation, clean code, collaboration,</span>{" "}
-              and continuously improving my skills to stay at the forefront of backend development.
+                My goal is to empower businesses with the power of AI — making
+                technology more intelligent, accessible, and impactful. I
+                believe in{" "}
+                <span className="text-teal-300">
+                  innovation, quality, collaboration,
+                </span>{" "}
+                and continuously pushing the boundaries of what AI can achieve
+                for modern businesses and startups.
               </p>
             </div>
           </motion.div>

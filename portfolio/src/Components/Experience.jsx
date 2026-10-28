@@ -2,7 +2,6 @@ import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import {
   FaLaptopCode,
-  FaCode,
   FaRocket,
   FaExternalLinkAlt,
   FaChevronDown,
@@ -15,21 +14,30 @@ const timelineData = [
     company: "HuboWeb Technology (Pvt.) Ltd.",
     link: "https://huboweb.com/",
     period: "Jan 2025 - Present",
-    position: "Junior Backend Developerr",
-    location: "lahore, punjab, pakistan",
+    position: "AI Engineer & Full Stack Developer",
+    location: "Lahore, Punjab, Pakistan",
     icon: <FaLaptopCode />,
     description:
-      "Working on backend development for enterprise SaaS products, designing and implementing RESTful APIs, secure authentication, and scalable database solutions using Node.js, MySQL, and MongoDB.",
-    tech: ["Node.js", "Express.js", "MongoDB", "MySQL", "JWT", "MVC", "Repository Pattern", "REST APIs"],
+      "Building intelligent AI-powered web applications, SaaS platforms, and mobile apps. Integrating OpenAI APIs, designing custom AI chatbots, virtual assistants, and developing scalable full-stack products for startups and businesses.",
+    tech: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Python",
+      "OpenAI API",
+      "MongoDB",
+      "MySQL",
+      "JWT",
+      "REST APIs",
+    ],
     achievements: [
-"Developed scalable backend for SaaS platform integrating multiple social media platforms (FB, Instagram, Twitter, LinkedIn) into a unified dashboard",
-    "Implemented secure JWT-based authentication and role-based access control using layered architecture",
-    "Optimized database queries, improving performance by 25% across MySQL and MongoDB systems",
-    "Built reusable, maintainable APIs following MVC and repository patterns, enabling faster feature development",
+      "Developed AI-powered SaaS platform integrating multiple social media platforms (FB, Instagram, Twitter, LinkedIn) into a unified dashboard with intelligent analytics",
+      "Built custom AI chatbot & virtual assistant integrations using OpenAI API for client web applications",
+      "Developed HRMS system on .NET backend with React frontend — managing employee records, attendance, payroll, and roles",
+      "Implemented secure JWT-based authentication and role-based access control across multiple projects",
+      "Delivered AI Mobile App with content generation features (text, image) using AI APIs for Android & iOS",
     ],
   },
-
-  
 ];
 
 const Experience = () => {
@@ -65,10 +73,11 @@ const Experience = () => {
           <button
             key={index}
             onClick={() => setActiveTab(index)}
-            className={`cursor-pointer px-5 py-2 rounded-full font-medium whitespace-nowrap transition-all duration-300 ${activeTab === index
-              ? "bg-gradient-to-r from-sky-500 to-cyan-400 text-white shadow-lg"
-              : "bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-sky-400"
-              }`}
+            className={`cursor-pointer px-5 py-2 rounded-full font-medium whitespace-nowrap transition-all duration-300 ${
+              activeTab === index
+                ? "bg-gradient-to-r from-sky-500 to-cyan-400 text-white shadow-lg"
+                : "bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-sky-400"
+            }`}
           >
             {item.company.split(" ")[0]}
           </button>
@@ -136,7 +145,7 @@ const Experience = () => {
                 {/* Achievements */}
                 <div>
                   <button
-                    className=" cursor-pointer flex items-center justify-between w-full text-left"
+                    className="cursor-pointer flex items-center justify-between w-full text-left"
                     onClick={() =>
                       setOpenAchievements(
                         openAchievements === index ? null : index
@@ -146,11 +155,16 @@ const Experience = () => {
                     <span className="text-lg font-semibold">
                       Key Achievements
                     </span>
-                    {openAchievements === index ? <FaChevronUp /> : <FaChevronDown />}
+                    {openAchievements === index ? (
+                      <FaChevronUp />
+                    ) : (
+                      <FaChevronDown />
+                    )}
                   </button>
                   <div
-                    className={`overflow-hidden transition-all duration-500 ${openAchievements === index ? "max-h-[500px]" : "max-h-0"
-                      }`}
+                    className={`overflow-hidden transition-all duration-500 ${
+                      openAchievements === index ? "max-h-[500px]" : "max-h-0"
+                    }`}
                   >
                     <ul className="mt-3 space-y-3">
                       {item.achievements.map((ach, i) => (

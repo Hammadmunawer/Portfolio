@@ -3,18 +3,32 @@ import { motion } from "framer-motion";
 
 const aboutData = {
   skills: [
+    // AI & Core
+    "OpenAI API",
+    "AI Integration",
+    "Custom Chatbots",
+    "Virtual Assistants",
+    "Prompt Engineering",
+    // Web & Mobile
+    "React",
+    "Next.js",
     "Node.js",
     "Express.js",
+    "React Native",
+    // Backend & DB
+    "Python",
+    "FastAPI",
+    "Django",
     "SQL / MySQL",
     "MongoDB",
-    "firebase",
-    "RESTful APIs",
+    "Firebase",
+    // SaaS & Tools
+    "REST APIs",
     "JWT Authentication",
-    "MVC Architecture",
-    "Repository Pattern",
-    "Layered Architecture",
-    "Postman / API Testing",
     "Git / GitHub",
+    "Docker",
+    "Stripe Integration",
+    "Webflow",
   ],
   education: [
     {
@@ -22,7 +36,7 @@ const aboutData = {
       university: "Superior University of Pakistan",
       degree: "BS in Computer Science",
       description:
-        "Focused on Web Development, Software Engineering, and Databases.",
+        "Focused on AI, Web Development, Software Engineering, and Databases.",
     },
     {
       year: "2019 - 2021",
@@ -103,7 +117,7 @@ const Skills = () => {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-center mb-16 text-cyan-300"
         >
-          My <span className="text-cyan-400">Skills & Journey</span>
+          My <span className="text-cyan-400">Skills &amp; Journey</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -164,7 +178,7 @@ const Skills = () => {
                   key={index}
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
                   className="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-gray-900 font-medium text-sm hover:scale-110 transition-transform cursor-pointer shadow-lg"
                 >
                   {skill}
