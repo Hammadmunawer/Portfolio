@@ -11,31 +11,57 @@ import {
 
 const timelineData = [
   {
-    company: "HuboWeb Technology (Pvt.) Ltd.",
-    link: "https://huboweb.com/",
-    period: "Jan 2025 - Present",
-    position: "AI Engineer & Full Stack Developer",
-    location: "Lahore, Punjab, Pakistan",
-    icon: <FaLaptopCode />,
+    company: "Techzo Ltd.",
+    link: "#",
+    period: "Jan 2025 - Present (2 Years)",
+    position: "Software Engineer",
+    location: "Lahore, Pakistan",
+    icon: <FaRocket />,
     description:
-      "Building intelligent AI-powered web applications, SaaS platforms, and mobile apps. Integrating OpenAI APIs, designing custom AI chatbots, virtual assistants, and developing scalable full-stack products for startups and businesses.",
+      "Working on full-stack development, multi-tenant e-commerce architectures, and SaaS applications. Leading feature development, scalable RESTful API design, and database optimizations.",
     tech: [
-      "React",
-      "Next.js",
+      "Vue.js",
+      "React.js",
       "Node.js",
-      "Python",
-      "OpenAI API",
+      "Laravel",
       "MongoDB",
       "MySQL",
-      "JWT",
+      "Multi-tenant",
       "REST APIs",
     ],
     achievements: [
-      "Developed AI-powered SaaS platform integrating multiple social media platforms (FB, Instagram, Twitter, LinkedIn) into a unified dashboard with intelligent analytics",
-      "Built custom AI chatbot & virtual assistant integrations using OpenAI API for client web applications",
-      "Developed HRMS system on .NET backend with React frontend — managing employee records, attendance, payroll, and roles",
-      "Implemented secure JWT-based authentication and role-based access control across multiple projects",
-      "Delivered AI Mobile App with content generation features (text, image) using AI APIs for Android & iOS",
+      "Developed 'Get Shopin', a multi-tenant e-commerce platform with Vue.js frontend and separate per-tenant MongoDB databases for total data isolation.",
+      "Built 'Kingdom Rides', a comprehensive UK-based vehicle booking and fleet management platform using Laravel and MySQL with instant quote calculations.",
+      "Developed 'Trounce', an AI-powered SaaS platform integrating FB, Instagram, Twitter, and LinkedIn into a single unified analytics dashboard.",
+      "Designed clean, scalable RESTful APIs adhering to MVC, Layered Architecture, and Repository Patterns.",
+      "Actively engaged in Agile sprints, continuous feature rollouts, code reviews, and production performance tuning.",
+    ],
+  },
+  {
+    company: "HuboWeb Technology (Pvt.) Ltd.",
+    link: "https://huboweb.com/",
+    period: "Jan 2023 - Dec 2024 (2 Years)",
+    position: "Software Engineer",
+    location: "Lahore, Pakistan",
+    icon: <FaLaptopCode />,
+    description:
+      "Spearheaded backend and full-stack development for enterprise AI platforms, multi-tenant healthcare SaaS, and internal enterprise systems.",
+    tech: [
+      "React",
+      "ASP.NET Core",
+      "Node.js",
+      "BullMQ",
+      "Redis",
+      "PostgreSQL",
+      "OpenAI API",
+      "Dapper",
+    ],
+    achievements: [
+      "Architected 'CVAI' — a production-grade AI candidate validation system orchestrating multi-stage AI pipelines with BullMQ, Redis, PostgreSQL, and React monitoring.",
+      "Engineered 'CoreMax Cloud' — a multi-tenant pharmaceutical SaaS with subdomain tenant isolation, cross-timezone scheduling, and subscription plan restrictions.",
+      "Developed 'HRMS' with an ASP.NET Core & Dapper backend and React frontend, automating payroll, attendance, and role-based permissions.",
+      "Integrated OpenAI APIs and customized AI assistants into diverse web systems for intelligent workflow automation.",
+      "Optimized query structures and database indexing across PostgreSQL and MySQL, delivering an estimated 30% speed boost.",
     ],
   },
 ];
@@ -63,12 +89,12 @@ const Experience = () => {
           Professional Journey
         </h1>
         <p className="text-slate-400 max-w-2xl mx-auto">
-          My career path, experiences, and technologies I've worked with
+          Over 4+ years of professional engineering experience across modern SaaS, AI pipelines, and enterprise architectures
         </p>
       </header>
 
-      {/* Mobile Tabs */}
-      <div className="flex gap-3 overflow-x-auto pb-6 scrollbar-hide mb-6">
+      {/* Tabs */}
+      <div className="flex gap-3 overflow-x-auto pb-6 scrollbar-hide mb-6 justify-center">
         {timelineData.map((item, index) => (
           <button
             key={index}
@@ -85,7 +111,7 @@ const Experience = () => {
       </div>
 
       {/* Timeline */}
-      <div className="relative">
+      <div className="relative max-w-5xl mx-auto">
         {/* Vertical Line */}
         <div className="absolute left-7 sm:left-8 top-0 bottom-0 w-[3px] bg-gradient-to-b from-sky-500 via-cyan-400 to-sky-500 rounded"></div>
 
@@ -110,9 +136,11 @@ const Experience = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                   <h2 className="text-xl font-bold text-cyan-400 flex items-center gap-2">
                     {item.company}
-                    <a href={item.link} target="_blank" rel="noreferrer">
-                      <FaExternalLinkAlt className="text-slate-400 hover:text-sky-400 transition" />
-                    </a>
+                    {item.link && item.link !== "#" && (
+                      <a href={item.link} target="_blank" rel="noreferrer">
+                        <FaExternalLinkAlt className="text-slate-400 hover:text-sky-400 transition" />
+                      </a>
+                    )}
                   </h2>
                   <span className="bg-sky-500/15 text-sky-400 px-3 py-1 rounded-full text-sm font-medium mt-2 sm:mt-0">
                     {item.period}
@@ -153,7 +181,7 @@ const Experience = () => {
                     }
                   >
                     <span className="text-lg font-semibold">
-                      Key Achievements
+                      Key Responsibilities &amp; Achievements
                     </span>
                     {openAchievements === index ? (
                       <FaChevronUp />
@@ -170,7 +198,7 @@ const Experience = () => {
                       {item.achievements.map((ach, i) => (
                         <li
                           key={i}
-                          className="pl-5 border-l-2 border-sky-400 text-slate-300"
+                          className="pl-5 border-l-2 border-sky-400 text-slate-300 text-sm leading-relaxed"
                         >
                           {ach}
                         </li>
