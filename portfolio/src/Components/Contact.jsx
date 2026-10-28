@@ -64,15 +64,15 @@ const Contact = () => {
 
       emailjs
         .send(
-          "service_m9ml6ei", // ✅ tumhara Service ID
-          "template_o6umszl", // ⚡ apna Template ID yahan dalna
+          "service_ea926qm", // ✅ tumhara Service ID
+          "template_v1w3hgg", // ⚡ apna Template ID yahan dalna
           {
             from_name: formData.name,
             from_email: formData.email,
             subject: formData.subject,
             message: formData.message,
           },
-          "4nD5Kiu8MxXlVdFUL" // ⚡ apna Public Key dalna
+          "2-SjB0wc0d1Sl_NBr" // ⚡ apna Public Key dalna
         )
         .then(
           () => {
