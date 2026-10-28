@@ -64,7 +64,7 @@ const Contact = () => {
       emailjs
         .send(
           "service_ea926qm", // ✅ tumhara Service ID
-          "template_v1w3hgg", // ⚡ apna Template ID yahan dalna
+          "template_sw890vx", // ⚡ apna Template ID yahan dalna
           {
             from_name: formData.name,
             from_email: formData.email,
