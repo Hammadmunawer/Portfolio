@@ -93,6 +93,7 @@ const Projects = () => {
         "JWT Authentication",
         "REST APIs",
       ],
+      liveLink: "http://116.0.46.12:8081/",
       image: "/img/internal.jpg",
     },
   ];
